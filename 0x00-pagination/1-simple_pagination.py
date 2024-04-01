@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """
 Task 1. Simple pagination
+Implement a method named get_page that takes two integer arguments
+page with default value 1 and page_size with default value 10.
 """
 from typing import List, Tuple
 import csv
@@ -27,6 +29,9 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """
+        Gets a page from the dataset
+        """
         assert isinstance(page, int), 'invalid data type'
         assert isinstance(page_size, int), 'invalid data type'
         assert page > 0, 'invalid page'
@@ -34,6 +39,7 @@ class Server:
         self.dataset()
         start_index, end_index = index_range(page, page_size)
         return self.__dataset[start_index: end_index]
+
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
