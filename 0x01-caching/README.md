@@ -1,4 +1,5 @@
-# ✨ 0x01. Caching
+✨ 0x01. Caching 💽
+----------------
 
 ## Project Description ✍️
 This project 📚 focuses on implementing various caching algorithms in Python 🐍.
@@ -16,7 +17,6 @@ and how they can be applied to optimize data access in a caching system 💽. It
 - pycodestyle 2.5 📦
 
 ## 📚 Tasks
---------------
 
 ### 0. Basic dictionary 📖
 ---------------------
