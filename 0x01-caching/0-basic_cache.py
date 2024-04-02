@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """
 Task 0. Basic dictionary
 Create a class `BasicCache` that inherits
@@ -53,10 +53,14 @@ class BasicCache(BaseCaching):
         """
         Get an item from the cache by key
         """
+        if key is None:
+            return None
         return self.cache_data.get(key, None)
 
     def put(self, key, item):
         """
         Add or update an item in the cache
         """
-        return self.cache_data.update({key: item})
+        if key or item:
+            self.cache_data.update({key: item})
+        pass
