@@ -12,12 +12,6 @@ class BasicCache(BaseCaching):
     BasicCache inherits from BaseCaching and implements get and put methods
     """
 
-    def __init__(self) -> None:
-        """
-        Initialize the BasicCache object by calling the parent class __init__
-        """
-        super().__init__()
-
     def get(self, key):
         """
         Get an item from the cache by key
@@ -30,6 +24,6 @@ class BasicCache(BaseCaching):
         """
         Add or update an item in the cache
         """
-        if key or item:
+        if key and item:
             self.cache_data.update({key: item})
         pass
