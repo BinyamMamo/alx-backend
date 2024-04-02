@@ -1,5 +1,4 @@
-✨ 0x01. Caching 💽
-----------------
+# 💽 0x01. Caching
 
 ## Project Description ✍️
 This project 📚 focuses on implementing various caching algorithms in Python 🐍.
@@ -18,7 +17,7 @@ and how they can be applied to optimize data access in a caching system 💽. It
 
 ## 📚 Tasks
 
-### 0. Basic dictionary 📖
+### 📖 0. Basic dictionary
 ---------------------
 **📜 Task Requirements:**
 Create a class BasicCache that inherits from BaseCaching and implements a basic caching system using a dictionary.
@@ -38,7 +37,7 @@ my_cache.print_cache()
 print(my_cache.get("A"))
 ```
 
-### 1. FIFO caching 🔄
+### 🔄 1. FIFO caching
 ---------------------
 **📜 Task Requirements:**
 Create a class FIFOCache that inherits from BaseCaching and implements FIFO (First In, First Out) caching algorithm.
@@ -58,7 +57,7 @@ my_cache.print_cache()
 print(my_cache.get("A"))
 ```
 
-### 2. LIFO Caching 🔄
+### 🔄 2. LIFO Caching
 ---------------------
 **📜 Task Requirements:**
 Create a class LIFOCache that inherits from BaseCaching and implements LIFO (Last In, First Out) caching algorithm.
@@ -78,7 +77,7 @@ my_cache.print_cache()
 print(my_cache.get("A"))
 ```
 
-### 3. LRU Caching 🕐
+### 🕐 3. LRU Caching
 ---------------------
 **📜 Task Requirements:**
 Create a class LRUCache that inherits from BaseCaching and implements LRU (Least Recently Used) caching algorithm.
@@ -98,7 +97,7 @@ my_cache.print_cache()
 print(my_cache.get("A"))
 ```
 
-### 4. MRU Caching 🕐
+### 🕐 4. MRU Caching
 ---------------------
 **📜 Task Requirements:**
 Create a class MRUCache that inherits from BaseCaching and implements MRU (Most Recently Used) caching algorithm.
@@ -118,7 +117,7 @@ my_cache.print_cache()
 print(my_cache.get("A"))
 ```
 
-### 5. LFU Caching 📊
+### 📊 5. LFU Caching
 ---------------------
 **📜 Task Requirements:**
 Create a class LFUCache that inherits from BaseCaching and implements LFU (Least Frequently Used) caching algorithm.
