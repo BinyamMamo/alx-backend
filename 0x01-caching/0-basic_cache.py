@@ -4,7 +4,9 @@ Task 0. Basic dictionary
 Create a class `BasicCache` that inherits
 from `BaseCaching` and is a caching system
 """
-from basecaching import BaseCaching
+
+
+BaseCaching = __import__('base_caching').BaseCaching
 
 
 class BasicCache(BaseCaching):
