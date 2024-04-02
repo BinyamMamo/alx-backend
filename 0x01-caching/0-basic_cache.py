@@ -6,7 +6,7 @@ from `BaseCaching` and is a caching system
 """
 
 
-BaseCaching = __import__('base_caching').BaseCaching
+BaseCaching = __import__('basecaching').BaseCaching
 
 
 class BasicCache(BaseCaching):
