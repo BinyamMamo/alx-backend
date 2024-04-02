@@ -20,7 +20,7 @@ and how they can be applied to optimize data access in a caching system 💽. It
 ### 📖 0. Basic dictionary
 ---------------------
 **📜 Task Requirements:**
-Create a class BasicCache that inherits from BaseCaching and implements a basic caching system using a dictionary.
+Create a class `BasicCache` that inherits from `BaseCaching` and implements a basic caching system using a dictionary.
 
 **🗂️ Files:** 
 - **[0-basic_cache.py](0-basic_cache.py)**
@@ -40,7 +40,7 @@ print(my_cache.get("A"))
 ### 🔄 1. FIFO caching
 ---------------------
 **📜 Task Requirements:**
-Create a class FIFOCache that inherits from BaseCaching and implements FIFO (First In, First Out) caching algorithm.
+Create a class `FIFOCache` that inherits from `BaseCaching` and implements FIFO (First In, First Out) caching algorithm.
 
 **🗂️ Files:** 
 - **[1-fifo_cache.py](1-fifo_cache.py)**
