@@ -34,6 +34,4 @@ class FIFOCache(BaseCaching):
         if not self.cache_data.get(key, None):
             self.queue.append(key)
 
-        self.cache_data.update({
-            key: item
-        })
+        self.cache_data[key]= item
