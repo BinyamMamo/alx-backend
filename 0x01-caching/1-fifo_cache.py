@@ -24,17 +24,18 @@ class FIFOCache(BaseCaching):
         if key is None or item is None:
             return
 
-        if key in self.cache_data:
+        if key in self.cache_data.keys():
             self.cache_data[key] = item
             return
 
-        if len(self.cache_data) >= self.MAX_ITEMS:
-            first_item = self.queue[0]
-            print("DISCARD:", self.cache_data[first_item])
+        if (len(self.cache_data) >= self.MAX_ITEMS):
+            first_item = self.queue[0] if len(self.queue) > 0 else None
+            print("DISCARD: {}".format(first_item))
 
-            del self.cache_data[first_item]
-            del self.queue[0]
-
+            if self.get(first_item):
+                del self.cache_data[first_item]
+            if len(self.queue) > 0:
+                del self.queue[0]
         self.queue.append(key)
         self.cache_data[key] = item
 
