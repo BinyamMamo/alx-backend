@@ -5,8 +5,10 @@ Create a class `FIFOCache` that inherits from `BaseCaching`
 and implements FIFO (First In, First Out) caching algorithm.
 """
 
-from base_caching import BaseCaching
 from collections import deque
+
+
+BaseCaching = __import__('base_caching').BaseCaching
 
 
 class FIFOCache(BaseCaching):
