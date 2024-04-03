@@ -31,7 +31,6 @@ class TestFIFOCache(unittest.TestCase):
         cache.put('1', 'one')
         cache.put('2', 'two')
         cache.put('3', 'three')
-
         self.assertEqual(cache.cache_data, {'2': 'two', '3': 'three'})
 
     def test_put_adds_new_item(self):
@@ -40,3 +39,6 @@ class TestFIFOCache(unittest.TestCase):
         cache.put('1', 'one')
 
         self.assertEqual(cache.cache_data, {'1': 'one'})
+
+if __name__ == "__main__":
+    unittest.main()

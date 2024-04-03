@@ -30,8 +30,7 @@ class FIFOCache(BaseCaching):
 
         if len(self.cache_data) >= self.MAX_ITEMS:
             first_item = self.queue[0]
-            first_item = self.cache_data[first_item]
-            print("DISCARD:", first_item)
+            print("DISCARD:", self.cache_data[first_item])
 
             del self.cache_data[first_item]
             del self.queue[0]
