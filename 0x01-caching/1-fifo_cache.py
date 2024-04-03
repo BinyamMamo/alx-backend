@@ -5,6 +5,7 @@ Create a class `FIFOCache` that inherits from `BaseCaching`
 and implements FIFO (First In, First Out) caching algorithm.
 """
 from base_caching import BaseCaching
+from collections import deque
 
 
 class FIFOCache(BaseCaching):
@@ -14,9 +15,8 @@ class FIFOCache(BaseCaching):
 
     def __init__(self):
         """Initialize the FIFOCache."""
-        from collections import deque
         self.queue = deque()
-        super().__init__()
+        BaseCaching.__init__(self)
 
     def get(self, key):
         """Get an item from the cache.
