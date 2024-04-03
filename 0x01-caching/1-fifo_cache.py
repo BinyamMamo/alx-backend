@@ -23,17 +23,19 @@ class FIFOCache(BaseCaching):
         """
         if key is None or item is None:
             return
-        
+
         if key in self.cache_data:
             self.cache_data[key] = item
             return
 
         if len(self.cache_data) >= self.MAX_ITEMS:
             first_item = self.queue[0]
-            first_item = self.get(first_item)
-            print("DISCARD: ", first_item)
-            del first_item
+            first_item = self.cache_data[first_item]
+            print("DISCARD:", first_item)
+
+            del self.cache_data[first_item]
             del self.queue[0]
+
         self.queue.append(key)
         self.cache_data[key] = item
 
