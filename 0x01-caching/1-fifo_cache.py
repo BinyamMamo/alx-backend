@@ -15,21 +15,26 @@ class FIFOCache(BaseCaching):
 
     def __init__(self):
         """Initialize the FIFOCache."""
-        from collections import deque
-        self.queue = deque()
+        self.queue = []
         BaseCaching.__init__(self)
 
     def put(self, key, item):
         """Put an item into the cache.
         """
+        if key is None or item is None:
+            return
+        
+        if key in self.cache_data:
+            self.cache_data[key] = item
+            return
+
         if len(self.cache_data) >= self.MAX_ITEMS:
             first_item = self.queue[0]
-            del self.cache_data.get(first_item)
-            self.queue.popleft()
+            first_item = self.get(first_item)
             print("DISCARD: ", first_item)
-        if not self.cache_data.get(key, None):
-            self.queue.append(key)
-
+            del first_item
+            del self.queue[0]
+        self.queue.append(key)
         self.cache_data[key] = item
 
     def get(self, key):
