@@ -4,9 +4,7 @@ Task 0. Basic dictionary
 Create a class `BasicCache` that inherits
 from `BaseCaching` and is a caching system
 """
-
-
-BaseCaching = __import__('basecaching').BaseCaching
+from basecaching import BaseCaching
 
 
 class BasicCache(BaseCaching):
@@ -14,7 +12,7 @@ class BasicCache(BaseCaching):
     BasicCache inherits from BaseCaching and implements get and put methods
     """
 
-    def get(self, key):
+    def get(self, key: str) -> object:
         """
         Get an item from the cache by key
         """
@@ -22,7 +20,7 @@ class BasicCache(BaseCaching):
             return None
         return self.cache_data.get(key, None)
 
-    def put(self, key, item):
+    def put(self, key: str, item: object) -> None:
         """
         Add or update an item in the cache
         """
