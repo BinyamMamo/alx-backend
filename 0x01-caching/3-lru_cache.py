@@ -31,7 +31,6 @@ class LRUCache(BaseCaching):
 
         if key in self.queue:
             del self.cache_data[key]
-            del self.queue[self.queue.index(key)]
 
         self.queue.append(key)
         self.cache_data[key] = item
