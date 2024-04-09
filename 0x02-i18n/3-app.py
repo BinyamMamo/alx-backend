@@ -4,13 +4,8 @@
 Use the _ or `gettext` function to parametrize your templates.
 """
 
-import babel
 from flask import Flask, render_template, request
 from flask_babel import Babel
-
-
-app = Flask(__name__)
-babel = Babel(app)
 
 
 class Config:
@@ -22,7 +17,10 @@ class Config:
     BABEL_DEFAULT_TIMEZONE = 'UTC'
 
 
+app = Flask(__name__)
 app.config.from_object(Config)
+app.url_map.strict_slashes = False
+babel = Babel(app)
 
 
 @babel.localeselector
@@ -34,7 +32,7 @@ def get_locale() -> str:
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
-@app.route("/", methods=['GET'], strict_slashes=False)
+@app.route("/")
 def home() -> str:
     """
     renders the home page
@@ -43,4 +41,4 @@ def home() -> str:
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
