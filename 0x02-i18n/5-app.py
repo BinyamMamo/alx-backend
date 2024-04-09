@@ -2,25 +2,25 @@
 """
 Task 5. Basic Flask app
 """
-
 from flask import Flask, render_template, request, g
 from flask_babel import Babel
-
-
-app = Flask(__name__)
-babel = Babel(app)
 
 
 class Config:
     """
     Config class.
     """
+
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
 
 
+app = Flask(__name__)
 app.config.from_object(Config)
+app.url_map.strict_slashes = False
+babel = Babel(app)
+
 
 users = {
     1: {"name": "Balou", "locale": "fr", "timezone": "Europe/Paris"},
@@ -68,7 +68,7 @@ def get_locale() -> str:
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
-@app.route('/', methods=["GET"], strict_slashes=False)
+@app.route('/')
 def hello() -> str:
     """
     Render template for root route.
@@ -77,4 +77,4 @@ def hello() -> str:
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port="5000")
+    app.run()
