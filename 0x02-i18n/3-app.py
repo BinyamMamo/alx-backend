@@ -26,7 +26,7 @@ app.config.from_object(Config)
 
 
 @babel.localeselector
-def get_locale():
+def get_locale() -> str:
     """
     Get the best match between the requested languages
     and the supported languages
@@ -35,11 +35,11 @@ def get_locale():
 
 
 @app.route("/", methods=['GET'], strict_slashes=False)
-def home():
+def home() -> str:
     """
     renders the home page
     """
-    return render_template("0-index.html")
+    return render_template("3-index.html")
 
 
 if __name__ == '__main__':

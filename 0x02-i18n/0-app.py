@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 
 @app.route("/", methods=['GET'], strict_slashes=False)
-def home():
+def home() -> str:
     """
     renders the home page
     """
