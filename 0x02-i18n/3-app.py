@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """
-Task 2 - Get locale from request
-Create a get_locale function with the babel.localeselector decorator.
+3. Parametrize templates
+Use the _ or `gettext` function to parametrize your templates.
 """
+
+import babel
 from flask import Flask, render_template, request
 from flask_babel import Babel
 
@@ -26,7 +28,8 @@ app.config.from_object(Config)
 @babel.localeselector
 def get_locale():
     """
-    Get the best match between requested languages and supported languages
+    Get the best match between the requested languages
+    and the supported languages
     """
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
@@ -36,7 +39,7 @@ def home():
     """
     renders the home page
     """
-    return render_template("2-index.html")
+    return render_template("0-index.html")
 
 
 if __name__ == '__main__':
