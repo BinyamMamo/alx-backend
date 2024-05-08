@@ -1,9 +1,9 @@
 # directories
-__pycache__
-.vscode
-env
-redis-6.0.10
-node_modules
+__pycache__/
+.vscode/
+env/
+redis-6.0.10/
+node_modules/
 
 # files
 0x00-pagination/Popular_Baby_Names.csv
