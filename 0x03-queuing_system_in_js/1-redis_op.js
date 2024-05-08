@@ -2,10 +2,15 @@ import redis from 'redis';
 
 const client = redis.createClient({
   port: 6379,
-  host: '127.0.0.1'
+  host: '127.0.0.1',
 });
 
 client
+  .on('connect', () => {c
+    displaySchoolValue('Holberton');
+    setNewSchool('HolbertonSanFrancisco', '100');
+    displaySchoolValue('HolbertonSanFrancisco');
+  })
   .on('ready', () => {
     console.log('Redis client connected to the server');
   })
@@ -22,7 +27,3 @@ function displaySchoolValue(schoolName) {
     console.log(value);
   });
 }
-
-displaySchoolValue('Holberton');
-setNewSchool('HolbertonSanFrancisco', '100');
-displaySchoolValue('HolbertonSanFrancisco');
